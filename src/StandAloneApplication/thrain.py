@@ -15,7 +15,7 @@ global prime_
 '''
 def encrypt(filename,directory,public_key,private_key):
 
-	key = DH.generate_secret(long(private_key), long(public_key))
+	key = DH.generate_secret(int(private_key), int(public_key))
 	str = key.encode('hex')
 	key = str[0:32]
 	file_obj = open(filename,"r")
@@ -57,7 +57,7 @@ def decrypt(filename,directory,public_key,private_key):
 	#temp.append(list[1])
 	#text = ENCDEC.shamirs_join(temp,unicodedata.normalize('NFKD',msg2).encode('ascii','ignore'))
 	outputFilename = os.path.join(directory,"DecodedFile.txt")
-	file_obj = open(outputFilename,"w");
+	file_obj = open(outputFilename,"w")
 	file_obj.write(text)
 	os.remove(filename)
 	os.system("xdg-open " + directory)
