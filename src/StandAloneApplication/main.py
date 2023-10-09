@@ -11,18 +11,18 @@ OPEN FILE AND DIRECTORY
 -----------------------------------------------------------------
 '''
 def openfileEnc():
-	filename = tkinter.filedialog.askopenfilename(initialdir = "/Users/debdyuti/Documents",title = "Select file",filetypes = (("text files","*.rtf"),("all files","*.*")))
+	filename = tkinter.filedialog.askopenfilename(initialdir = "/home/debdyuti/Desktop",title = "Select file",filetypes = (("text files","*.txt"),("all files","*.*")))
 	fileToEncrptyEntryUpdate(filename)
 
 def opendirectoryEnc():
-	directory = tkinter.filedialog.askdirectory(initialdir = "/Users/debdyuti/Documents",title = "Select directory")
+	directory = tkinter.filedialog.askdirectory(initialdir = "/home/debdyuti/Desktop",title = "Select directory")
 	destinationFolderEncEntryUpdate(directory)
 
 def openfileDec():
-	filename = tkinter.filedialog.askopenfilename(initialdir = "/Users/debdyuti/Documents",title = "Select file",filetypes = (("text files","*.rtf"),("all files","*.*")))
+	filename = tkinter.filedialog.askopenfilename(initialdir = "/home/debdyuti/Desktop",title = "Select file",filetypes = (("text files","*.txt"),("all files","*.*")))
 	fileToDecryptEntryUpdate(filename)	
 def opendirectoryDec():
-	directory = tkinter.filedialog.askdirectory(initialdir = "/Users/debdyuti/Documents",title = "Select directory")
+	directory = tkinter.filedialog.askdirectory(initialdir = "/home/debdyuti/Desktop",title = "Select directory")
 	destinationFolderDecEntryUpdate(directory)
 '''
 -----------------------------------------------------------------
@@ -38,11 +38,11 @@ def recievefilepage():
 def opengithub(event):
 	webbrowser.open_new(r"https://github.com/Debdyuti-01/Secure-File-System-on-Cloud")
 
-def openparthlinkedin(event):
+def opendebdyutilinkedin(event):
 	webbrowser.open_new(r"https://www.linkedin.com/in/debdyuti-das/")
 
-def opendebdyutilinkedin(event):
-	webbrowser.open_new(r"https://in.linkedin.com/in/hardik-gaur-135891122")
+#def opendebdyutilinkedin(event):
+	#webbrowser.open_new(r"https://in.linkedin.com/in/hardik-gaur-135891122")
 '''
 -----------------------------------------------------------------
 UPDATE ENTRY LABELS
@@ -74,7 +74,7 @@ ENCRYPT-DECRYPT TRIGGER BUTTON
 -----------------------------------------------------------------
 '''
 def encryptor():
-	EncryptBTN.config(state="disabled")
+	EncryptBTN.config(state="active")
 	public_key = publicKeyOfRecieverEntry.get()
 	private_key = privateKeyOfSenderEntry.get()
 	directory = inputEncDirEntry.get()
@@ -82,7 +82,7 @@ def encryptor():
 	thrain.encrypt(filename,directory,public_key,private_key)
 
 def decryptor():
-	DecryptBTN.config(state="disabled")
+	DecryptBTN.config(state="active")
 	public_key = publicKeyOfSenderEntry.get()
 	private_key = privateKeyOfRecieverEntry.get()
 	directory = outputDecDirEntry.get()
@@ -236,14 +236,10 @@ def main():
 	padding.grid(row=3)
 	text2 = Label(Aboutus, text="Contributed by: ")
 	text2.grid(row=4, sticky='S')
-	hardiksocial = Label(Aboutus, text="Debdyuti")
-	hardiksocial.bind("<Button-1>",opendebdyutilinkedin)
-	hardiksocial.grid(row=5, sticky='SW',padx = 8)
-	text3 = Label(Aboutus, text="|")
-	text3.grid(row=5)
-	parthsocial = Label(Aboutus, text="Parth Trehan")
-	parthsocial.bind("<Button-1>",openparthlinkedin)
-	parthsocial.grid(row=5, sticky='SE',padx = 8)
+	debsocial = Label(Aboutus, text="Debdyuti")
+	debsocial.bind("<Button-1>",opendebdyutilinkedin)
+	debsocial.grid(row=5, sticky='SW',padx = 8)
+	
 
 
 	form.mainloop()
