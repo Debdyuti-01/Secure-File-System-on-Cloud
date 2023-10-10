@@ -4,6 +4,7 @@ import unicodedata
 import os
 import os.path
 import DH
+import binascii
 
 global key
 global prime_
@@ -16,7 +17,9 @@ global prime_
 def encrypt(filename,directory,public_key,private_key):
 
 	key = DH.generate_secret(int(private_key), int(public_key))
-	str = key.encode('hex')
+	#str = key.encode('hex')
+	#str = binascii.hexlify(key)
+	str=key.encode('utf-8').hex()
 	key = str[0:32]
 	file_obj = open(filename,"r")
 	t = time.time()
