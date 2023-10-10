@@ -17,4 +17,10 @@ pip3 install missingInstallationName
 Then go to src/WebApplication/app.py
 Go to line 168 and change the port number according to your system's availability
 
-
+## To run the StandAlone Application:
+### Go to the StandAlone Application directory
+cd src/StandAloneApplication
+### Run the application
+python3 main.py
+### In case of any error regarding missing installation, perform the following: (In place of missingInstallation write the name of what you want)
+pip3 install missingInstallationName
