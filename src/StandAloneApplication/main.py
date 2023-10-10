@@ -1,7 +1,7 @@
 import tkinter
 from tkinter import *
 import webbrowser
-import thrain
+import Cloud9
 #import Tkconstants
 import tkinter, tkinter.filedialog
 
@@ -79,7 +79,7 @@ def encryptor():
 	private_key = privateKeyOfSenderEntry.get()
 	directory = inputEncDirEntry.get()
 	filename = inputEncFileEntry.get()
-	thrain.encrypt(filename,directory,public_key,private_key)
+	Cloud9.encrypt(filename,directory,public_key,private_key)
 
 def decryptor():
 	DecryptBTN.config(state="active")
@@ -87,7 +87,7 @@ def decryptor():
 	private_key = privateKeyOfRecieverEntry.get()
 	directory = outputDecDirEntry.get()
 	filename = outputDecFileEntry.get()
-	thrain.decrypt(filename,directory,public_key,private_key)
+	Cloud9.decrypt(filename,directory,public_key,private_key)
 
 def main():
 
