@@ -236,7 +236,7 @@ def main():
 	padding.grid(row=3)
 	text2 = Label(Aboutus, text="Contributed by: ")
 	text2.grid(row=4, sticky='S')
-	debsocial = Label(Aboutus, text="Debdyuti")
+	debsocial = Label(Aboutus, text="Debdyuti Vivian Ethan Carlos Michael")
 	debsocial.bind("<Button-1>",opendebdyutilinkedin)
 	debsocial.grid(row=5, sticky='SW',padx = 8)
 	
