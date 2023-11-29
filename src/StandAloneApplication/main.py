@@ -226,7 +226,7 @@ def main():
 	'''	
 	intro = Label(Aboutus, text="\nCloud9- Secure file system")
 	intro.grid(row=10)
-	text1 = Label(Aboutus, text="\nCloud9 enables its users to transfer files\nsecurely in 'txt' format without\nany third party eavesdropping\n")
+	text1 = Label(Aboutus, text="\nCloud9 enables its users to transfer files\nsecurely in 'txt' format without\nany third party interference\n")
 	text1.grid(row=1)
 	githublink = Label(Aboutus, text="Know More", fg="blue", cursor="hand2")
 	githublink.bind("<Button-1>", opengithub)

@@ -60,7 +60,7 @@ def download_file(filename):
 	if(os.path.isfile(filepath)):
 		return send_file(filepath, attachment_filename='fileMessage-Cloud9Security.txt',as_attachment=True)
 	else:
-		return render_template('file-list.html',msg='An issue encountered, our team is working on that')
+		return render_template('file-list.html',msg='An issue encountered, our team is working on it')
 
 '''
 -----------------------------------------------------------
@@ -76,7 +76,7 @@ def downloads_pk():
 		username = pickle.load(pickleObj)
 		pickleObj.close()
 	if len(username) == 0:
-		return render_template('public-key-list.html',msg='Aww snap! No public key found in the database')
+		return render_template('public-key-list.html',msg='Sorry! No public key found in the database')
 	else:
 		return render_template('public-key-list.html',msg='',itr = 0, length = len(username),directory=username)
 
@@ -85,7 +85,7 @@ def downloads_pk():
 def download_f():
 	for root,dirs,files in os.walk(UPLOAD_FOLDER):
 		if(len(files) == 0):
-			return render_template('file-list.html',msg='Aww snap! No file found in directory')
+			return render_template('file-list.html',msg='Sorry! No file found in directory')
 		else:
 			return render_template('file-list.html',msg='',itr=0,length=len(files),list=files)
 
