@@ -45,8 +45,11 @@ def encrypt(filename,directory,public_key,private_key):
 '''
 def decrypt(filename,directory,public_key,private_key):
 	
-	key = DH.generate_secret(long(private_key), long(public_key))
-	str = key.encode('hex')
+	key = DH.generate_secret(int(private_key), int(public_key))
+	#str = key.encode('hex')
+	#str = key.encode('hex')
+	#str = binascii.hexlify(key)
+	str=key.encode('utf-8').hex()
 	key = str[0:32]
 	file_obj = open(filename,"r")
 	msg = file_obj.read()
