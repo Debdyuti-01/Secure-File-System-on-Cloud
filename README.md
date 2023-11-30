@@ -36,27 +36,25 @@ Fill the fields file you want to encrypt/decrypt along with public and private k
 Click File-upload tab and upload the encrypted file on the web application
 
 # Steps to host the application on Cloud:
-* CReate 
-create an amazon EC2 instance.
-Select and create Amazon Linux AMI 2018.03.0 (HVM), SSD Volume Type
-While creating the machine, toggle to menu Configure Security Group menu.
-Here, enable port SSH, HTTP, RDP and in port, change Source to Anywhere
-Download and keep the publicKeyPair.pem file
-Install putty and puttygen
-Open puttygen, select the publicKeyPair.pem and generate a private key. Now, save it as Save private key
-Open the AWS machine dashboard ad copy the IPv4 Public IP of the instance created
-Open putty
-In putty, copy the IP in Host Name(or IP address)
-In putty, toggle the SSH>Auth and here, select the private key you generated.
-Click open and voila! The terminal of instance opens
-Enter "login as:" ec2-user
-Enter following command
-$sudo bash
-$yum install python-pip
-$yum install git
-$pip install flask
-Now, clone the forked repository on local machine
-In src/web-application/app.py, comment on line 169 and uncomment line 168
-Update the github repository
-On the terminal of instance, clone the repository and enter command
-$python app.py
+* Create AWS account
+* Create an amazon EC2 instance
+* Select and create Amazon Linux machine under AMI catalog
+* While creating the machine, toggle to menu Configure Security Group menu
+* Enable port SSH, HTTP, RDP and in port, change Source to Anywhere
+* Download and keep the publicKeyPair.pem file
+* Install putty and puttygen
+* Open puttygen, select the publicKeyPair.pem and generate a private key. Now, save it as Save private key
+* Open the AWS machine dashboard ad copy the IPv4 Public IP of the instance created
+* In putty, copy the IP in Host Name(or IP address)
+* In putty, toggle the SSH -> Auth and here, select the private key generated
+* Click open. The terminal of instance will open
+* Enter "login as:" ec2-user
+* Enter following command
+* $sudo bash
+* $yum install python-pip
+* $yum install git
+* $pip install flask
+* Now, clone the forked repository on local machine
+* In src/web-application/app.py, check if port is 80
+* Update the github repository
+* On the terminal of instance, clone the repository and enter command: $sudo python app.py
