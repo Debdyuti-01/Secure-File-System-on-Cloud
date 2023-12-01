@@ -55,6 +55,6 @@ Click File-upload tab and upload the encrypted file on the web application
 * $yum install git
 * $pip install flask
 * Now, clone the forked repository on local machine
-* In src/web-application/app.py, check if port is 80
+* In src/web-application/app.py, make the port as 80 in line 168
 * Update the github repository
 * On the terminal of instance, clone the repository and enter command: $sudo python app.py
